@@ -2,6 +2,13 @@
     text-align: center;
     padding: 32px;
     background-blend-mode: multiply;
+    position: relative;
+}
+
+.input-cor {
+    display: flex;
+    margin-left: 110rem;
+    position: absolute;
 }
 
 .time h3 {
