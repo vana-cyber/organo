@@ -8,7 +8,12 @@ const Time = ({ time, colaboradores, aoDeletar, mudarCor, aoFavoritar }) => {
     
     return (
 
-        colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: hexToRgba(time.cor, '0.6') }}>
+        colaboradores.length > 0 && 
+        <section className='time' 
+            style={{ backgroundImage: 'url(/imagens/fundo.png)', 
+            backgroundColor: hexToRgba(time.cor, '0.6') 
+            }}
+        >
             <input type='color' className='input-cor' onChange={evento => mudarCor(evento.target.value, time.id)}/>
             <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
             <div className='colaboradores'>

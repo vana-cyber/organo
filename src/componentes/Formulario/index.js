@@ -3,9 +3,11 @@ import Botao from '../Botao'
 import Campo from '../Campo'
 import ListaSuspensa from '../ListaSuspensa'
 import './formulario.css'
+import { v4 as uuidv4 } from 'uuid'
 
 const Formulario = ({aoCadastrar, times, cadastrarNovoTime}) => {
 
+    const [id, setId] = useState('')
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
@@ -17,11 +19,19 @@ const Formulario = ({aoCadastrar, times, cadastrarNovoTime}) => {
         evento.preventDefault()
         console.log('form enviado', nome, cargo, imagem, time )
         aoCadastrar({
+            id,
             nome,
             cargo,
             imagem,
             time
         })
+
+        setId(uuidv4())
+        setImagem('')
+        setNome('')
+        setCargo('')
+        setTime('')
+
     }
 
     return (
